@@ -13,7 +13,7 @@ const assessmentSchema = new mongoose.Schema({
   answers: { type: [answerSchema], required: true },
   time_allocated: { type: Number, default: 30 },
   status: { type: String, default: "ongoing" },
-});
+},{timestamps:true});
 
 const Assessment = mongoose.model("Assessment", assessmentSchema);
 

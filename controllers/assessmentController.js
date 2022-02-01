@@ -9,7 +9,7 @@ const getAssessments = async (req, res) => {
   try {
     const assessments = await Assessment.find(
       {},
-      "-questions -answers"
+      "-answers"
     ).populate("batch_id", "slug isClosed closure_date");
     assessments.forEach((assessment) => {
       if (assessment.batch_id.isClosed) {
