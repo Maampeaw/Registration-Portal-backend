@@ -16,7 +16,7 @@ const applicationSchema = new mongoose.Schema({
   isApproved: { type: String, default: "pending" },
   cv: String,
   image: String,
-  created_at: { type: String, default: new Date().toISOString() },
+  created_at: { type: String, default: new Date(Date.now()).toISOString() },
 });
 
 const Application = mongoose.model("Application", applicationSchema);
